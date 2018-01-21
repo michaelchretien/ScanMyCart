@@ -2,13 +2,14 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Barcode</title>
+        <title>Scan My Cart | App</title>
 		<meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/new.css">
+		<link rel="stylesheet" href="css/animate.css">
     </head>
     <body>
 		
@@ -17,7 +18,7 @@
 		<div class="container">
 		  <div class="row navbar-brand">
 		  <span class="appName" align="textcenter" style="margin-left:15px">
-			<img src="watermelon.png" width="25" height="25" alt="melon">
+			<img id="logo" class="rubberBand" src="watermelon.png" width="25" height="25" alt="melon">
 			  <strong class="appName">Scan My Cart</strong>
 			</span>
 		  </div>
@@ -26,13 +27,13 @@
 	
 	  <!-- Home panel -->
 	  <div id="about" class="jumbotron text-center panel-principal">
-		<h1 >Numériser mon panier!</h1>
-		<p class="text-justify">
+		<h1 class="animated fadeIn" >Numériser mon panier!</h1>
+		<p class="text-justify animated fadeIn">
 		  Bienvenue sur notre application innovatrice! Le but de ce service est de vous fournir des informations additionnelles sur
 		  les produits que vous désirez acheter. Afin d'obtenir les informations, vous avez simplement à scanner le code bar
 		  du produit avec votre appareil mobile.
 		</p>
-		<a href="#scan" class="big-btn btn btn-default">Commencer</a>
+		<a href="#scan" class="big-btn btn btn-default animated fadeIn" onclick="logoAnimationStart()">Commencer</a>
 	  </div>
 	
 	  <!-- Scan panel -->

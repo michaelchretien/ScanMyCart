@@ -17,6 +17,7 @@ document.getElementById('barcodeFile').onchange = processBarcode;
 /////////////////////////////////////////////////
 function processBarcode()
 {
+	
 	$("#data").hide();
 	$("#analyse").hide();
 	$("#wait").show();

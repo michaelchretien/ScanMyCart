@@ -151,3 +151,15 @@ styles.css:55
 	margin-left: 0;
     padding: 0;
 }
+
+/* Animation */
+
+#logo {
+  animation-iteration-count: 4;
+  -webkit-animation-iteration-count: 4;
+}
+
+.fadeIn{
+	
+	animation-duration: 3s !important;
+}

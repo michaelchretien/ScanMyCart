@@ -53,3 +53,18 @@ function resetClass(id)
 	
 }
 
+/////////////////////////////////////////////////
+/// Animation
+/////////////////////////////////////////////////
+function logoAnimationStart()
+{
+	$("#logo").addClass("animated");
+	setTimeout(function(){ logoAnimationStop(); }, 2500);
+}
+
+function logoAnimationStop()
+{
+	$("#logo").removeClass("animated");
+}
+
+
