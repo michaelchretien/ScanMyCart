@@ -83,6 +83,7 @@ function getProductInformation(code)
 			
 			$("#warning").hide();
 			fillInfos(product);
+			computeScore(product);
 		}
  });
 	
@@ -91,7 +92,7 @@ function getProductInformation(code)
 /////////////////////////////////////////////////
 /// Fill infos on page
 /////////////////////////////////////////////////
-function fillInfos(product)
+function fillProductInfos(product)
 {
     document.getElementById('nom').innerHTML = product.name;
     document.getElementById('code').innerHTML = product.code;
