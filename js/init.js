@@ -9,7 +9,7 @@ $( document ).ready(function() {
   
   $("#warning").hide();
   $("#error").hide();
-  $("#data").show();
+  $("#data").hide();
   $("#wait").hide();
   $('#carboneEstimated').hide();
   $('body').bind('touchmove', function(e){e.preventDefault()})
