@@ -98,7 +98,7 @@ function getProductInformation(code)
 function fillProductInfos(product)
 {
     $('#nom').html(product.name);
-    $('#code').html(product.code);
+    $('#codeProduit').html(product.code);
 	
 	if(typeof product.carbon == "undefined")
 	{
