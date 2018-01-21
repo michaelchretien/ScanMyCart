@@ -17,7 +17,6 @@ $( document ).ready(function() {
   $('body').bind('touchmove', function(e){e.preventDefault()})
   
     $('[data-toggle="tooltip"]').tooltip();  
-	document.body.requestFullscreen();	
 });
 
  $(document).ready(function () {
