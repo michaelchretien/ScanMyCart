@@ -211,3 +211,7 @@ h5 {
 btn-danger {
     color: orange;
 }
+
+form-group {
+    text-align: center;
+}
