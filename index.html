@@ -18,7 +18,7 @@
 		<div class="container">
 		  <div class="row navbar-brand">
 		  <span class="appName" align="textcenter" style="margin-left:15px">
-			<img id="logo" class="rubberBand" src="watermelon.png" width="25" height="25" alt="melon">
+			<img id="logo" class="" src="watermelon.png" width="25" height="25" alt="melon">
 			  <strong class="appName">Scan My Cart</strong>
 			</span>
 		  </div>
@@ -44,13 +44,13 @@
 
 		  
 		  <div class="col-sm-4">
-			<label class="btn btn-default btn-lg center-block glyphicon glyphicon-barcode" for="barcodeFile"> Scan </label>
+			<label id="scanButton" class="btn btn-default btn-lg center-block glyphicon glyphicon-barcode" for="barcodeFile"> Scan </label>
 			<form id="form">
 				<input class="invisible" type="file" id="barcodeFile" />
 			</form>	
 			
-			<label style="border-radius: 4px 4px 0px 0px;" data-toggle="collapse" data-target="#input" class="btn btn-default btn-lg center-block glyphicon"> Manuellement </label>
-			<div id="input" class="collapse">
+			<label id="manualButton" style="border-radius: 4px 4px 0px 0px;" data-toggle="collapse" data-target="#input" class="delay1 btn btn-default btn-lg center-block glyphicon"> Manuellement </label>
+			<div id="input" class="collapse delay2">
 			    <input id="code" style="border-radius: 0;" type="text" class="form-control" placeholder="Entrez les 13 chiffres visibles" aria-label="Recipient's username" aria-describedby="basic-addon2">
 				<button onclick="getBarcode()" style="border-radius: 0px 0px 4px 4px; width:100%;" class="btn btn-outline-secondary" type="button">Chercher</button>	
 			</div>
@@ -69,7 +69,7 @@
 			  <strong>Oups !</strong> Le code n'a pas 12 chiffres ou n'est pas un code valide...
 			</div>
 		  </div>
-		  <div class="col-sm-8">
+		  <div class="col-sm-8 delay3">
 		    <canvas id="canvas" class="img-thumbnail" width="2000" height="1500"></canvas>
 		  </div>
 	  </div>

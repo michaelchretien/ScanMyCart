@@ -155,11 +155,23 @@ styles.css:55
 /* Animation */
 
 #logo {
-  animation-iteration-count: 4;
-  -webkit-animation-iteration-count: 4;
+  animation-iteration-count: 3;
+  -webkit-animation-iteration-count: 3;
 }
 
 .fadeIn{
 	
-	animation-duration: 3s !important;
+	animation-duration: 2.5s !important;
+}
+
+.delay1{
+	animation-delay: 0.5s;
+}
+
+.delay2{
+	animation-delay: 1s;
+}
+
+.delay3{
+	animation-delay: 1.5s;
 }

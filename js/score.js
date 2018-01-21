@@ -58,13 +58,23 @@ function resetClass(id)
 /////////////////////////////////////////////////
 function logoAnimationStart()
 {
-	$("#logo").addClass("animated");
-	setTimeout(function(){ logoAnimationStop(); }, 2500);
+	$('#logo').animateCss('rubberBand');
+	$('#scanButton').animateCss("fadeIn");
+	$('#manualButton').animateCss("fadeIn");
+	$('#canvas').animateCss("fadeIn");
 }
 
-function logoAnimationStop()
-{
-	$("#logo").removeClass("animated");
-}
 
+$.fn.extend({
+    animateCss: function (animationName, callback) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        this.addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+            if (callback) {
+              callback();
+            }
+        });
+        return this;
+    }
+});
 
