@@ -93,10 +93,10 @@ function getProductInformation(code)
 /////////////////////////////////////////////////
 function fillInfos(product)
 {
-    document.getElementById('nom').innerHTML = "Nom : "+product.name;
-    document.getElementById('code').innerHTML = "Code : "+product.code;
-    document.getElementById('carbone').innerHTML = "Carbone : "+product.carbon;
-    document.getElementById('pays').innerHTML = "Pays : "+product.country;	
+    document.getElementById('nom').innerHTML = product.name;
+    document.getElementById('code').innerHTML = product.code;
+    document.getElementById('carbone').innerHTML = product.carbon;
+    document.getElementById('pays').innerHTML = product.country;	
 	$("#data").show();
 	$("#wait").hide();
 
