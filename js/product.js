@@ -50,7 +50,7 @@ function processBarcode()
 
 function getBarcode()
 {
-	document.getElementById('queryState').innerHTML = 'Decoding in process...';
+	document.getElementById('queryState').innerHTML = 'Décodage en cours...';
 	
 	var image = new Image();
 
@@ -69,17 +69,14 @@ function getBarcode()
         if (line) {
 
             getProductInformation(line.isbn);
-			document.getElementById('queryState').innerHTML = 'Decoded : ' + line.isbn;
+			document.getElementById('queryState').innerHTML = 'Code décodé : ' + line.isbn;
 
         } else {
-            document.getElementById('queryState').innerHTML = 'Sorry, could not find barcode… please try again';
+            document.getElementById('queryState').innerHTML = 'Désolé, nous ne sommes pas en mesure de le décoder...veuillez réessayer';
         }
     };
 
     image.src = window.URL.createObjectURL(this.files[0]);
-	
-	
-	
 }
 
 /////////////////////////////////////////////////
@@ -93,7 +90,7 @@ function getProductInformation(code)
 		
 		if(json.status_verbose == "product not found")
 		{
-			document.getElementById('queryState').innerHTML = 'Product not found';
+			document.getElementById('queryState').innerHTML = 'Produit non trouvé';
 		}
 		else
 		{
