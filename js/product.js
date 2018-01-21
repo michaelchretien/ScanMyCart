@@ -85,8 +85,8 @@ function getProductInformation(code)
 /////////////////////////////////////////////////
 function fillInfos(product)
 {
-    $scope.name = product.name;
-    $scope.code = product.code;
-    $scope.carbon = product.carbon;
-    $scope.country = product.country;
+    document.getElementById('nom').innerHTML = "Nom : "+product.name;
+    document.getElementById('code').innerHTML = "Code : "+product.code;
+    document.getElementById('carbone').innerHTML = "Carbone : "+product.carbon;
+    document.getElementById('pays').innerHTML = "Pays : "+product.country;
 }
