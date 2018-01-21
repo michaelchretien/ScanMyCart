@@ -17,7 +17,6 @@ document.getElementById('barcodeFile').onchange = processBarcode;
 /////////////////////////////////////////////////
 function processBarcode()
 {
-	//document.getElementById('queryState').innerHTML = 'Decodage en cours...';
 	$("#data").hide();
 	$("#analyse").hide();
 	$("#wait").show();
@@ -39,12 +38,10 @@ function processBarcode()
         if (line) {
 			$("#warning").hide();
             getProductInformation(line.isbn);
-			//document.getElementById('queryState').innerHTML = 'Code decode : ' + line.isbn;
 
         } else {
 			$("#wait").hide();
 			$("#warning").show();
-            //document.getElementById('queryState').innerHTML = 'Desole, nous ne sommes pas en mesure de le decoder...veuillez reessayer';
         }
 		
     };
@@ -71,15 +68,12 @@ function getBarcode()
 /////////////////////////////////////////////////
 function getProductInformation(code)
 {
-	//console.log("https://world.openfoodfacts.org/api/v0/product/" + code + ".json");
 	$.getJSON( "https://world.openfoodfacts.org/api/v0/product/" + code + ".json", function( json ) {
-		//console.log(json );
 		
 		if(json.status_verbose == "product not found")
 		{
 			$("#error").show();
 			$("#data").hide();
-			//document.getElementById('queryState').innerHTML = 'Produit non trouve';
 		}
 		else
 		{
