@@ -75,6 +75,7 @@ function getProductInformation(code)
 		if(json.status_verbose == "product not found")
 		{
 			$("#error").show();
+			$("#wait").hide();
 			$("#data").hide();
 		}
 		else
