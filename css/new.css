@@ -1,7 +1,19 @@
+@media screen and (max-width: 699px) {
+    .text-centered {
+        padding: 0 !important;
+		font-size:12px !important;
+    }
+	
+	h1{
+		margin:0 !important;
+	}
+}
+
+
 .text-centered{
 	max-width: 550px;
     margin: auto;
-    /*padding: 25px;*/
+    padding: 25px;
 }
 
 body{
