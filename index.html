@@ -1,38 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr-CA">
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Numérisateur de produits">
+  <meta name="keywords" content="Code Barre, Épicerie">
+  <meta name="author" content="AppleJuice">
   <title>Scan My Cart</title>
+
    <link rel="stylesheet" type="text/css" href="css/styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/controllers/controller.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="icon" href="watermelon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-
-
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="row navbar-brand">
-            <img src="watermelon.png" width="25" height="25" alt="melon">
-            <span align="textcenter">Scan My Cart</span>
+        <img src="watermelon.png" width="25" height="25" alt="melon">
+        <span align="textcenter" style="margin-left:15px">Scan My Cart</span>
       </div>
     </div>
   </nav>
+
   <div class="jumbotron text-center panel-principal">
     <h1>Numériser mon Panier!</h1>
     <well>
-      Bienvenue sur le meilleur service d'aide à l'achat au monde! Le but de ce service est de vous fournir des informations additionnelles
+      Bienvenue sur notre application innovatrice! Le but de ce service est de vous fournir des informations additionnelles
       sur les produits que vous désirez acheter. Afin d'obtenir les informations, vous avez simplement à scanner le code
       bar du produit avec votre appareil mobile.
     </well>
@@ -44,133 +45,109 @@
       </div>
     </form>
   </div>
-  
-  <!-- Scan section -->
+
   <div id="picture" class="panel-principal panel panel-default">
-	<div class="panel-heading">Scanner un produit</div>
-	<div class="panel-body">Please select a sharp photo of a barcode above</div>
-	
-	  <div class="col-sm-4">
-		<label class="btn btn-default btn-lg center-block glyphicon glyphicon-barcode" for="barcodeFile"> Scan </label>
-		<form id="form">
-			<input class="invisible" type="file" id="barcodeFile" />
-		</form>
-		<div id="warning" class="alert alert-warning">
-		  <strong>Oups !</strong> Nous ne pouvons pas décoder l'image...veuillez réessayer.
-		</div>
-		<div id="error" class="alert alert-danger">
-		  <strong>Dommage !</strong> Le produit n'existe pas dans la base de donnée.
-		</div>
-		<div id="wait" class="alert alert-success">
-		  <strong>Patience !</strong> Nous cherchons le produit...
-		</div>
-	  </div>
-	  <div class="col-sm-8">
-	    <canvas id="canvas" class="img-thumbnail" width="2000" height="1500" style="width: 320px; height: 240px;"></canvas>
-	  </div>
+    <div class="panel-heading">Scanner un produit</div>
+
+    <div class="col-sm-4">
+      <label class="btn btn-default btn-lg center-block glyphicon glyphicon-barcode" for="barcodeFile"> Scan </label>
+      <form id="form">
+        <input class="invisible" type="file" id="barcodeFile" />
+      </form>
+      <div id="warning" class="alert alert-warning">
+        <strong>Oups !</strong> Nous ne pouvons pas décoder l'image...veuillez réessayer.
+      </div>
+      <div id="error" class="alert alert-danger">
+        <strong>Dommage !</strong> Le produit n'existe pas dans la base de donnée.
+      </div>
+      <div id="wait" class="alert alert-success">
+        <strong>Patience !</strong> Nous cherchons le produit...
+      </div>
     </div>
-	
-  <!-- Information produit -->
-  	 <div id="data" class="panel-principal panel panel-default">
-	 <div class="panel-heading">Informations sur le produit</div>
-	 <div id="queryState" class="panel-body">Analyse de l'impact environnemental de votre produit</div>
-	<div class="col-sm-6">  
-	  <table class="table table-hover">
-		<thead>
-		  <tr>
-			<th>Attribut</th>
-			<th>Valeur</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-			<td>Code</td>
-			<td id="code"></td>
-		  </tr>
-		  <tr>
-			<td>Nom</td>
-			<td id="nom"></td>
-		  </tr>
-		  <tr>
-			<td>Pays origine</td>
-			<td id="pays"></td>
-		  </tr>
-		  <tr>
-			<td>Empreinte carbone</td>
-			<td id="carbone" ></td>
-		  </tr>
-		</tbody>
-	  </table>
-				
-	</div>
-	<div class="col-sm-6">
-	  
-	</div>
-	  </div>
-
-  <!-- Container (About Section) -->
-  <div id="about" class="container-fluid">
-    <div class="row">
-      <div class="col-sm-8">
-        <label for="barcodeFile" class="btn btn-default btn-lg">
-          <label class="glyphicon glyphicon-barcode"></label> Scan
-
-          <form id="form">
-            <input class="invisible" type="file" id="barcodeFile" />
-          </form>
-        </label>
-        <canvas class="invisible" id="canvas" width="2000" height="1500" style="width: 320px; height: 240px;"></canvas>
-
-        <p id="queryState"> Veuillez prendre une photo du code barre</p>
-        <button class="btn btn-default btn-lg">Get in Touch</button>
-      </div>
-      <div class="col-sm-4">
-        <span class="glyphicon glyphicon-signal logo"></span>
-      </div>
+    <div class="col-sm-8">
+      <canvas id="canvas" class="img-thumbnail" width="2000" height="1500" style="width: 320px; height: 240px;"></canvas>
     </div>
   </div>
 
-    <h2>Commentaires</h2>
-    <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
+  <!-- Information produit -->
+  <div id="data" class="panel-principal panel panel-default">
+    <div class="panel-heading">Informations sur le produit</div>
+    <div id="queryState" class="panel-body">Analyse de l'impact environnemental de votre produit</div>
+    <div class="col-sm-6">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Attribut</th>
+            <th>Valeur</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Code</td>
+            <td id="code"></td>
+          </tr>
+          <tr>
+            <td>Nom</td>
+            <td id="nom"></td>
+          </tr>
+          <tr>
+            <td>Pays origine</td>
+            <td id="pays"></td>
+          </tr>
+          <tr>
+            <td>Empreinte carbone</td>
+            <td id="carbone"></td>
+          </tr>
+        </tbody>
+      </table>
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <h4>"Wow très intéressante cette application. Sans doute j'ai hâte de pouvoir l'utiliser!!"
-            <br>
-            <span>Wendygagi, Devpost</span>
-          </h4>
-        </div>
-        <div class="item">
-          <h4>"Ce serait super utile!"
-            <br>
-            <span>Ariana Gamez, Devpost</span>
-          </h4>
-        </div>
-        <div class="item">
-          <h4>"J'utiliserais ce programme dans la vie de tous les jours!"
-            <br>
-            <span>Suzie Lalonde, Devpost</span>
-          </h4>
-        </div>
-      </div>
-
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
+    <div class="col-sm-6">
+
+    </div>
+  </div>
+
+  <h2>Commentaires</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"Wow très intéressante cette application. Sans doute j'ai hâte de pouvoir l'utiliser!!"
+          <br>
+          <span>Wendygagi, Devpost</span>
+        </h4>
+      </div>
+      <div class="item">
+        <h4>"Ce serait super utile!"
+          <br>
+          <span>Ariana Gamez, Devpost</span>
+        </h4>
+      </div>
+      <div class="item">
+        <h4>"J'utiliserais ce programme dans la vie de tous les jours!"
+          <br>
+          <span>Suzie Lalonde, Devpost</span>
+        </h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
   </div>
 
   <!-- Container (Contact Section) -->
@@ -179,76 +156,75 @@
     <div class="row">
       <div class="col-sm-5">
         <p>Vous voulez améliorer l'application? Dites-nous comment!</p>
-      <div class="col-sm-7 slideanim">
-        <div class="row">
-          <div class="col-sm-6 form-group">
-            <input class="form-control" id="name" name="name" placeholder="Nom" type="text" required>
+        <div class="col-sm-7 slideanim">
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <input class="form-control" id="name" name="name" placeholder="Nom" type="text" required>
+            </div>
+            <div class="col-sm-6 form-group">
+              <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+            </div>
           </div>
-          <div class="col-sm-6 form-group">
-            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-          </div>
-        </div>
-        <textarea class="form-control" id="comments" name="comments" placeholder="Commentaire" rows="5"></textarea>
-        <br>
-        <div class="row">
-          <div class="col-sm-12 form-group">
-            <button class="btn btn-default pull-right" type="submit">Envoyer</button>
+          <textarea class="form-control" id="comments" name="comments" placeholder="Commentaire" rows="5"></textarea>
+          <br>
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <button class="btn btn-default pull-right" type="submit">Envoyer</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
- 
 
-  <footer class="container-fluid text-center">
-    <a href="#myPage" title="To Top">
-      <span class="glyphicon glyphicon-chevron-up"></span>
-    </a>
-    <p>Developpé par AppleJuice<br>
-      Hackatown 2018
-    </p>
-  </footer>
 
-  <script>
-    $(document).ready(function () {
-      // Add smooth scrolling to all links in navbar + footer link
-      $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-          // Prevent default anchor click behavior
-          event.preventDefault();
+    <footer class="container-fluid text-center">
+      <a href="#myPage" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </a>
+      <p>Developpé par AppleJuice
+        <br> Hackatown 2018
+      </p>
+    </footer>
 
-          // Store hash
-          var hash = this.hash;
+    <script>
+      $(document).ready(function () {
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
 
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 900, function () {
+            // Store hash
+            var hash = this.hash;
 
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-          });
-        } // End if
-      });
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 900, function () {
 
-      $(window).scroll(function () {
-        $(".slideanim").each(function () {
-          var pos = $(this).offset().top;
-
-          var winTop = $(window).scrollTop();
-          if (pos < winTop + 600) {
-            $(this).addClass("slide");
-          }
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            });
+          } // End if
         });
-      });
-    })
-  </script>
-  <script src="js/barcode.js"></script>	
-  <script src="js/product.js"></script>
-  <script src="js/init.js"></script>
+
+        $(window).scroll(function () {
+          $(".slideanim").each(function () {
+            var pos = $(this).offset().top;
+
+            var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+              $(this).addClass("slide");
+            }
+          });
+        });
+      })
+    </script>
+    <script src="js/barcode.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/init.js"></script>
 
 </body>
-
 </html>
