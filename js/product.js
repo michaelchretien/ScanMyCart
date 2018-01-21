@@ -91,5 +91,6 @@ function fillInfos(product)
     $scope.name = product.name;
     $scope.code = product.code;
     $scope.carbon = product.carbon;
-    $scope.country = product.country;		
+    $scope.country = product.country;
+    location.reload(true);
 }
