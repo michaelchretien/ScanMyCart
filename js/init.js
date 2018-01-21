@@ -11,4 +11,5 @@ $( document ).ready(function() {
   $("#error").hide();
   $("#data").hide();
   $("#wait").hide();
+  $('body').bind('touchmove', function(e){e.preventDefault()})
 });
