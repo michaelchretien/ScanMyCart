@@ -11,11 +11,23 @@
 		<link rel="stylesheet" href="css/new.css">
     </head>
     <body>
+		
+	  <!-- Navbar --> 
+	  <nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+		  <div class="row navbar-brand">
+		  <span class="appName" align="textcenter" style="margin-left:15px">
+			<img src="watermelon.png" width="25" height="25" alt="melon">
+			  <strong class="appName">Scan My Cart</strong>
+			</span>
+		  </div>
+		</div>
+	  </nav>
 	
 	  <!-- Home panel -->
 	  <div id="about" class="jumbotron text-center panel-principal">
-		<h1 class="banner">Numériser mon panier!</h1>
-		<p class="text-centered banner">
+		<h1 >Numériser mon panier!</h1>
+		<p class="text-centered">
 		  Bienvenue sur notre application innovatrice! Le but de ce service est de vous fournir des informations additionnelles sur
 		  les produits que vous désirez acheter. Afin d'obtenir les informations, vous avez simplement à scanner le code bar
 		  du produit avec votre appareil mobile.
@@ -25,7 +37,7 @@
 	
 	  <!-- Scan panel -->
 	  <div id="scan" class="panel-principal panel panel-default">
-		<div class="panel-heading">Scanner un produit</div>
+		<div class="panel-heading heading-principal">1 - Scanner un produit</div>
 		<div class="panel-body">Veuillez prendre une photo claire du code barre</div>
 		
 		  <div class="col-sm-4">
@@ -50,7 +62,7 @@
 	  
 	  <!-- Data panel -->
 	  <div id="data" class="panel-principal panel panel-default">
-	    <div class="panel-heading">Informations sur le produit</div>
+	    <div class="panel-heading heading-principal">2 - Informations sur le produit</div>
 	    <div id="queryState" class="panel-body">Analyse de l'impact environnemental de votre produit</div>
 		<div class="col-sm-6">  
 		  <table class="table table-hover">
@@ -183,7 +195,7 @@
 
 	<!-- Footer -->
     <footer class="container-fluid text-center">
-      <a href="#myPage" title="To Top">
+      <a href="#about" title="Haut">
         <span class="glyphicon glyphicon-chevron-up"></span>
       </a>
       <p>Developpé par AppleJuice

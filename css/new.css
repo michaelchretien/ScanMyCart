@@ -8,12 +8,6 @@ body{
 	margin:0;
 }			
 
-#about{
-	background-image: url(../img/bg.jpg);
-    background-size: cover;
-    background-position-x: center;
-}
-
 .panel-principal {
 	height:100vh;
 	width:100%;
@@ -29,8 +23,94 @@ body{
     font-size: 30px;
 }
 
-.banner{
-	background: linear-gradient(to right, #00000000,#000000f7,#00000000);
-    color: white !important; 
-	box-shadow: 0px 0px 20px #141111;
+.jumbotron {
+    padding: 100px 25px;
+}
+
+.navbar {
+    margin-bottom: 0;
+    background-color: #f4511e;
+    z-index: 9999;
+    border: 0;
+	box-shadow: 0px 1px 1px #bd370d;
+}
+
+.appName{
+	margin-left: 15px;
+	color: #fff !important;
+	font-family: Tahoma, sans-serif;
+	font-size:18px;
+}
+
+.heading-principal{
+	color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+		font-family: Tahoma, sans-serif;
+	font-size:18px;
+	margin-top:75px;
+}
+
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+}
+
+h2{
+	font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.carousel-indicators li {
+    border-color: #f4511e;
+}
+.carousel-indicators li.active {
+    background-color: #f4511e;
+}
+
+.item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+}
+
+footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+}
+
+footer{
+	color: white;
+    padding-top: 15px;
+    background-color: #383838;
+}
+
+.slideanim {visibility:hidden;}
+.slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+}
+
+.bg-grey {
+    background-color: #f6f6f6;
+}
+
+styles.css:55
+.container-fluid {
+    padding: 60px 50px;
 }
