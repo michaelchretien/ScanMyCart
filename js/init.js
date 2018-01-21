@@ -16,7 +16,8 @@ $( document ).ready(function() {
   $('#carboneEstimated').hide();
   $('body').bind('touchmove', function(e){e.preventDefault()})
   
-    $('[data-toggle="tooltip"]').tooltip();   
+    $('[data-toggle="tooltip"]').tooltip();  
+	document.body.requestFullscreen();	
 });
 
  $(document).ready(function () {

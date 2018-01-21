@@ -22,6 +22,8 @@
 
 .text-justify{
 	text-align: justify;
+	max-width: 550px;
+    margin: auto;
 }
 
 body{
