@@ -22,15 +22,6 @@
 				display:none;
 			}
 			
-			.clickButton{
-				padding: 25px 25px;
-				background-color: red;
-			}
-			
-			.startPage{
-				background-color:blue;
-				height:50px;
-			}
 		</style>
     </head>
     <body>
@@ -50,41 +41,51 @@
 			<div id="error" class="alert alert-danger">
 			  <strong>Malheur !</strong> Le produit n'existe pas dans la base de donnée.
 			</div>
+			<div id="wait" class="alert alert-success">
+			  <strong>Patience !</strong> Nous cherchons le produit...
+			</div>
 		  </div>
 		  <div class="col-sm-8">
 		    <canvas id="canvas" class="img-thumbnail" width="2000" height="1500" style="width: 320px; height: 240px;"></canvas>
 		  </div>
 	  </div>
 	  
-	 <div id="data" class="panel-principal panel panel-default">
-		<div class="panel-heading">Informations sur le produit</div>
-		<div id="queryState" class="panel-body">Please select a sharp photo of a barcode above</div>
-		
-					  <div class="col-sm-6">
-						<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-			  <div class="card-header">Header</div>
-			  <div class="card-body">
-				<h5 class="card-title">Primary card title</h5>
-				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-			  </div>
-			</div>
-		  </div>
-		  <div class="col-sm-6">
-		    <canvas id="canvas" class="img-thumbnail" width="2000" height="1500" style="width: 320px; height: 240px;"></canvas>
-		  </div>
+	  <div id="data" class="panel-principal panel panel-default">
+	    <div class="panel-heading">Informations sur le produit</div>
+	    <div id="queryState" class="panel-body">Analyse de l'impact environnemental de votre produit</div>
+		<div class="col-sm-6">  
+		  <table class="table table-hover">
+			<thead>
+			  <tr>
+				<th>Attribut</th>
+				<th>Valeur</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td>Code</td>
+				<td id="">Doe</td>
+			  </tr>
+			  <tr>
+				<td>Nom</td>
+				<td id="">Moe</td>
+			  </tr>
+			  <tr>
+				<td>Pays origine</td>
+				<td id="">Dooley</td>
+			  </tr>
+			  <tr>
+				<td>Empreinte carbone</td>
+				<td id="" >Dooley</td>
+			  </tr>
+			</tbody>
+		  </table>
+					
+		</div>
+		<div class="col-sm-6">
+		  
+		</div>
 	  </div>
-
-<div class="card border-success mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-transparent border-success">Header</div>
-  <div class="card-body text-success">
-    <h5 class="card-title">Success card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-  <div class="card-footer bg-transparent border-success">Footer</div>
-</div>  
-		
-		<span id="productData"> </span>
-
     </body>	
 	
 	<script src="js/barcode.js"></script>	

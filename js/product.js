@@ -19,6 +19,7 @@ function processBarcode()
 {
 	//document.getElementById('queryState').innerHTML = 'Decodage en cours...';
 	$("#data").hide();
+	$("#wait").show();
 	
 	var image = new Image();
 
@@ -40,9 +41,11 @@ function processBarcode()
 			//document.getElementById('queryState').innerHTML = 'Code decode : ' + line.isbn;
 
         } else {
+			$("#wait").hide();
 			$("#warning").show();
             //document.getElementById('queryState').innerHTML = 'Desole, nous ne sommes pas en mesure de le decoder...veuillez reessayer';
         }
+		
     };
 	
 	image.src = window.URL.createObjectURL(this.files[0]);
@@ -95,4 +98,5 @@ function fillInfos(product)
     $scope.code = product.code;
     $scope.carbon = product.carbon;
     $scope.country = product.country;
+	$("#wait").hide();
 }

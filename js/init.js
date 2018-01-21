@@ -10,4 +10,5 @@ $( document ).ready(function() {
   $("#warning").hide();
   $("#error").hide();
   $("#data").hide();
+  $("#wait").hide();
 });
