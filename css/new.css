@@ -159,7 +159,7 @@ styles.css:55
   -webkit-animation-iteration-count: 1;
 }
 
-.fadeIn{
+.fadeIn3sec{
 	
 	animation-duration: 1.5s !important;
 }

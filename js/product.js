@@ -57,7 +57,8 @@ function getBarcode()
 	var code = document.getElementById("code").value;
 	
 	if(code.toString().length == 12)
-	{
+	{	
+		$("#wait").show();
 		getProductInformation(code);
 	}
 	else
@@ -101,6 +102,7 @@ function fillProductInfos(product)
     $('#nom').html(product.name);
     $('#codeProduit').html(product.code);
 	
+	console.log(product.carbon);
 	if(typeof product.carbon == "undefined")
 	{
 		$('#carboneEstimated').show();
