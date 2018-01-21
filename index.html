@@ -32,7 +32,7 @@
       </div>
     </div>
   </nav>
-  <div class="jumbotron text-center">
+  <div class="jumbotron text-center panel-principal">
     <h1>Numériser mon Panier!</h1>
     <well>
       Bienvenue sur le meilleur service d'aide à l'achat au monde! Le but de ce service est de vous fournir des informations additionnelles
@@ -47,6 +47,69 @@
       </div>
     </form>
   </div>
+  
+  <!-- Scan section -->
+  <div id="picture" class="panel-principal panel panel-default">
+	<div class="panel-heading">Scanner un produit</div>
+	<div class="panel-body">Please select a sharp photo of a barcode above</div>
+	
+	  <div class="col-sm-4">
+		<label class="btn btn-default btn-lg center-block glyphicon glyphicon-barcode" for="barcodeFile"> Scan </label>
+		<form id="form">
+			<input class="invisible" type="file" id="barcodeFile" />
+		</form>
+		<div id="warning" class="alert alert-warning">
+		  <strong>Oups !</strong> Nous ne pouvons pas décoder l'image...veuillez réessayer.
+		</div>
+		<div id="error" class="alert alert-danger">
+		  <strong>Dommage !</strong> Le produit n'existe pas dans la base de donnée.
+		</div>
+		<div id="wait" class="alert alert-success">
+		  <strong>Patience !</strong> Nous cherchons le produit...
+		</div>
+	  </div>
+	  <div class="col-sm-8">
+	    <canvas id="canvas" class="img-thumbnail" width="2000" height="1500" style="width: 320px; height: 240px;"></canvas>
+	  </div>
+    </div>
+	
+  <!-- Information produit -->
+  	 <div id="data" class="panel-principal panel panel-default">
+	 <div class="panel-heading">Informations sur le produit</div>
+	 <div id="queryState" class="panel-body">Analyse de l'impact environnemental de votre produit</div>
+	<div class="col-sm-6">  
+	  <table class="table table-hover">
+		<thead>
+		  <tr>
+			<th>Attribut</th>
+			<th>Valeur</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td>Code</td>
+			<td id="code"></td>
+		  </tr>
+		  <tr>
+			<td>Nom</td>
+			<td id="nom"></td>
+		  </tr>
+		  <tr>
+			<td>Pays origine</td>
+			<td id="pays"></td>
+		  </tr>
+		  <tr>
+			<td>Empreinte carbone</td>
+			<td id="carbone" ></td>
+		  </tr>
+		</tbody>
+	  </table>
+				
+	</div>
+	<div class="col-sm-6">
+	  
+	</div>
+	  </div>
 
   <!-- Container (About Section) -->
   <div id="about" class="container-fluid">
@@ -185,6 +248,9 @@
       });
     })
   </script>
+  <script src="js/barcode.js"></script>	
+  <script src="js/product.js"></script>
+  <script src="js/init.js"></script>
 
 </body>
 
