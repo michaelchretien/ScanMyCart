@@ -8,26 +8,23 @@
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<style>
-			body{
-				margin:0;
-			}
-			
-			.panel-principal {
-				height:100vh;
-				width:100%;
-				margin-bottom:0px !important;
-			}
-			
-			.invisible{
-				display:none;
-			}
-			
-		</style>
+		<link rel="stylesheet" href="css/new.css">
     </head>
     <body>
 	
-	  <div id="picture" class="panel-principal panel panel-default">
+	  <!-- Home panel -->
+	  <div id="about" class="jumbotron text-center panel-principal">
+		<h1 class="banner">Numériser mon panier!</h1>
+		<p class="text-centered banner">
+		  Bienvenue sur notre application innovatrice! Le but de ce service est de vous fournir des informations additionnelles sur
+		  les produits que vous désirez acheter. Afin d'obtenir les informations, vous avez simplement à scanner le code bar
+		  du produit avec votre appareil mobile.
+		</p>
+		<a href="#scan" class="big-btn btn btn-default">Commencer</a>
+	  </div>
+	
+	  <!-- Scan panel -->
+	  <div id="scan" class="panel-principal panel panel-default">
 		<div class="panel-heading">Scanner un produit</div>
 		<div class="panel-body">Veuillez prendre une photo claire du code barre</div>
 		
@@ -51,6 +48,7 @@
 		  </div>
 	  </div>
 	  
+	  <!-- Data panel -->
 	  <div id="data" class="panel-principal panel panel-default">
 	    <div class="panel-heading">Informations sur le produit</div>
 	    <div id="queryState" class="panel-body">Analyse de l'impact environnemental de votre produit</div>
@@ -102,6 +100,96 @@
 			</div>
 		</div>
 	  </div>
+	  
+	  <!-- Comments panel -->
+	  <div>
+		<h2>Commentaires</h2>
+		  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+			  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			  <li data-target="#myCarousel" data-slide-to="1"></li>
+			  <li data-target="#myCarousel" data-slide-to="2"></li>
+			  <li data-target="#myCarousel" data-slide-to="3"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+			  <div class="item active">
+				<h4>"Wow très intéressante cette application. Sans doute j'ai hâte de pouvoir l'utiliser!!"
+				  <br>
+				  <span>Wendygagi, Devpost</span>
+				</h4>
+			  </div>
+			  <div class="item">
+				<h4>"Ce serait super utile!"
+				  <br>
+				  <span>Ariana Gamez, Devpost</span>
+				</h4>
+			  </div>
+			  <div class="item">
+				<h4>"Wow très beau projet!"
+				  <br>
+				  <span>Moniclac, Devpost</span>
+				</h4>
+			  </div>
+			  <div class="item">
+				<h4>"J'utiliserais ce programme dans la vie de tous les jours!"
+				  <br>
+				  <span>Suzie Lalonde, Devpost</span>
+				</h4>
+			  </div>
+			</div>
+
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			  <span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			  <span class="sr-only">Next</span>
+			</a>
+		  </div>
+		  </div>
+	  </div>
+	  
+	    <!-- Container (Contact Section) -->
+  <div id="contact" class="container-fluid bg-grey">
+    <h2 class="text-center">Suggestions</h2>
+    <div class="row text-center">
+      <div class="col-sm-12">
+        <p>Vous voulez améliorer l'application? Dites-nous comment!</p>
+        <div class="col-sm-12 slideanim">
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <input class="form-control" id="name" name="name" placeholder="Nom" type="text" required>
+            </div>
+            <div class="col-sm-6 form-group">
+              <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+            </div>
+          </div>
+          <textarea class="form-control" id="comments" name="comments" placeholder="Commentaire" rows="5"></textarea>
+          <br>
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <button class="btn btn-default pull-right" type="submit">Envoyer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	</div>
+
+	<!-- Footer -->
+    <footer class="container-fluid text-center">
+      <a href="#myPage" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </a>
+      <p>Developpé par AppleJuice
+        <br> Hackatown 2018
+      </p>
+    </footer>
     </body>	
 	
 	<script src="js/barcode.js"></script>

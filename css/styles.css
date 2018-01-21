@@ -8,6 +8,12 @@
 	display:none;
 }
 
+.text-centered{
+	max-width: 500px;
+    margin: auto;
+    padding: 25px;
+}
+
 body {
     font: 400 1.5rem 'roboto', sans-serif;
     line-height: 1.8;
