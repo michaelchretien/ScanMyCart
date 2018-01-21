@@ -1,6 +1,7 @@
 /*  Hackatown 2018 - ScanMyCart
 *	Authors : Michael Chretien, Antoine Gaulin, Jean-Sebastien Lemaire
 *	Brief : Get product information from a codebar picture 
+*	Use : OpenFoodFacts database and https://github.com/liip/barcode.js
 */
 
 /* File input 	#barcodeFile
@@ -19,7 +20,7 @@ document.getElementById('barcodeFile').onchange = processBarcode;
 /////////////////////////////////////////////////
 function processBarcode()
 {
-	document.getElementById('queryState').innerHTML = 'Decoding in process...';
+		document.getElementById('queryState').innerHTML = 'Decodage en cours...';
 	
 	var image = new Image();
 
@@ -38,45 +39,20 @@ function processBarcode()
         if (line) {
 
             getProductInformation(line.isbn);
-			document.getElementById('queryState').innerHTML = 'Decoded : ' + line.isbn;
+			document.getElementById('queryState').innerHTML = 'Code decode : ' + line.isbn;
 
         } else {
-            document.getElementById('queryState').innerHTML = 'Sorry, could not find barcode… please try again';
+            document.getElementById('queryState').innerHTML = 'Desole, nous ne sommes pas en mesure de le decoder...veuillez reessayer';
         }
     };
+	
+	image.src = window.URL.createObjectURL(this.files[0]);
 
-    image.src = window.URL.createObjectURL(this.files[0]);
 }
 
 function getBarcode()
 {
-	document.getElementById('queryState').innerHTML = 'Décodage en cours...';
-	
-	var image = new Image();
 
-    image.onload = function () {
-
-        var canvas = document.getElementById('canvas');
-        var width = canvas.width;
-        var height = canvas.height;
-
-        var context = canvas.getContext('2d');
-        context.drawImage(image, 0, 0, width, height);
-
-        var barcode = new Barcode(context, width, height);
-        var line = barcode.scan();
-
-        if (line) {
-
-            getProductInformation(line.isbn);
-			document.getElementById('queryState').innerHTML = 'Code décodé : ' + line.isbn;
-
-        } else {
-            document.getElementById('queryState').innerHTML = 'Désolé, nous ne sommes pas en mesure de le décoder...veuillez réessayer';
-        }
-    };
-
-    image.src = window.URL.createObjectURL(this.files[0]);
 }
 
 /////////////////////////////////////////////////
@@ -90,7 +66,7 @@ function getProductInformation(code)
 		
 		if(json.status_verbose == "product not found")
 		{
-			document.getElementById('queryState').innerHTML = 'Produit non trouvé';
+			document.getElementById('queryState').innerHTML = 'Produit non trouve';
 		}
 		else
 		{
@@ -101,9 +77,7 @@ function getProductInformation(code)
 				country : json.product.countries
 			};
 			
-			fillInfos();
-			//console.log(product);
-			//document.getElementById("productData").innerHTML = product.name + "\n" + product.code + "\n" + product.carbon + "\n" + product.country;			
+			fillInfos(product);
 		}
  });
 	
@@ -114,5 +88,5 @@ function getProductInformation(code)
 /////////////////////////////////////////////////
 function fillInfos(product)
 {
-	
+	document.getElementById("productData").innerHTML = product.name + "\n" + product.code + "\n" + product.carbon + "\n" + product.country;			
 }
