@@ -4,24 +4,31 @@
 	margin-bottom:0 !important;
 }
 
-.invisible{
+.invisible {
 	display:none;
 }
 
 body {
-    font: 400 15px Lato, sans-serif;
+    font: 400 1.5rem 'roboto', sans-serif;
     line-height: 1.8;
     color: #818181;
-	margin:0;
+    margin:0;
 	/*overflow:hidden;*/
 }
+
+h1 {
+    text-align: center;
+}
+
 h2 {
     font-size: 24px;
     text-transform: uppercase;
     color: #303030;
     font-weight: 600;
     margin-bottom: 30px;
+    text-align: center;
 }
+
 h4 {
     font-size: 19px;
     line-height: 1.375em;
@@ -29,11 +36,13 @@ h4 {
     font-weight: 400;
     margin-bottom: 30px;
 }  
+
 .jumbotron {
-    background-color: seashell;
-    color: #f4511e;
+    background-color: white;
+    color: gradient;
     padding: 100px 25px;
     font-family: Montserrat, sans-serif;
+    text-align: justify;
 }
 .container-fluid {
     padding: 60px 50px;
@@ -195,4 +204,8 @@ img {
 h5 {
     width: 100%;
     margin-left: 15 px;
+}
+
+btn-danger {
+    color: orange;
 }
