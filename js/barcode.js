@@ -325,3 +325,20 @@ Barcode.EAN13 = {
         return total / sum;
     }
 };
+
+function checksum(isbn) {
+
+        var length = isbn.length;
+        var sum = 0;
+
+        for (var i = 0; i < length; i++) {
+
+            if (i % 2 == 0) {
+                sum += parseInt(isbn[i]);
+            } else {
+                sum += parseInt(isbn[i]) * 3;
+            }
+        }
+
+        return sum % 10 == 0;
+    };

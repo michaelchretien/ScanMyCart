@@ -130,3 +130,8 @@ styles.css:55
 .container-fluid {
     padding: 60px 50px;
 }
+
+.no-padding{
+	margin-left: 0;
+    padding: 0;
+}

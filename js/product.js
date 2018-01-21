@@ -55,7 +55,15 @@ function processBarcode()
 
 function getBarcode()
 {
-
+	$("#notValid").hide();
+	var code = document.getElementById("code").value;
+	
+	if(code.toString().length == 12)
+	{
+		getProductInformation(code);
+	}
+	else
+		$("#notValid").show();
 }
 
 /////////////////////////////////////////////////
