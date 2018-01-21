@@ -44,9 +44,19 @@
 
 <!-- Second Container -->
 <div class="container-fluid bg-2 text-center">
-  <a href="#" class="btn btn-default btn-lg">
-    <span class="glyphicon glyphicon-barcode"></span> Scan
-  </a>
+  
+  <label for="barcodeFile" class="btn btn-default btn-lg">      
+	<label class="glyphicon glyphicon-barcode"></label> Scan
+
+    <form id="form">
+      <input class="invisible" type="file" id="barcodeFile" />
+	</form>
+  </label>
+        <canvas class="invisible" id="canvas" width="2000" height="1500" style="width: 320px; height: 240px;"></canvas>
+
+  	  <p id="queryState"> Please select a sharp photo of a barcode above</p>
+
+
 </div>
 
 <!-- Third Container (Grid) -->
@@ -74,4 +84,7 @@
 </footer>
 
   </body>
+    <script src="js/product.js"></script>
+  <script src="js/barcode.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
 </html>
