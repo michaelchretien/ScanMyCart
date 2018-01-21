@@ -17,7 +17,8 @@ document.getElementById('barcodeFile').onchange = processBarcode;
 /////////////////////////////////////////////////
 function processBarcode()
 {
-	document.getElementById('queryState').innerHTML = 'Decodage en cours...';
+	//document.getElementById('queryState').innerHTML = 'Decodage en cours...';
+	$("#data").hide();
 	
 	var image = new Image();
 
@@ -34,12 +35,13 @@ function processBarcode()
         var line = barcode.scan();
 
         if (line) {
-
+			$("#warning").hide();
             getProductInformation(line.isbn);
-			document.getElementById('queryState').innerHTML = 'Code decode : ' + line.isbn;
+			//document.getElementById('queryState').innerHTML = 'Code decode : ' + line.isbn;
 
         } else {
-            document.getElementById('queryState').innerHTML = 'Desole, nous ne sommes pas en mesure de le decoder...veuillez reessayer';
+			$("#warning").show();
+            //document.getElementById('queryState').innerHTML = 'Desole, nous ne sommes pas en mesure de le decoder...veuillez reessayer';
         }
     };
 	
@@ -63,7 +65,9 @@ function getProductInformation(code)
 		
 		if(json.status_verbose == "product not found")
 		{
-			document.getElementById('queryState').innerHTML = 'Produit non trouve';
+			$("#error").show();
+			$("#data").hide();
+			//document.getElementById('queryState').innerHTML = 'Produit non trouve';
 		}
 		else
 		{
@@ -74,6 +78,7 @@ function getProductInformation(code)
 				country : json.product.countries
 			};
 			
+			$("#warning").hide();
 			fillInfos(product);
 		}
  });
@@ -85,6 +90,7 @@ function getProductInformation(code)
 /////////////////////////////////////////////////
 function fillInfos(product)
 {
+	$("#data").show();
     $scope.name = product.name;
     $scope.code = product.code;
     $scope.carbon = product.carbon;
