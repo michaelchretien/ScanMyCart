@@ -1,16 +1,13 @@
 /*  Hackatown 2018 - ScanMyCart
 *	Authors : Michael Chretien, Antoine Gaulin, Jean-Sebastien Lemaire
 *	Brief : Get product information from a codebar picture 
-*	Use : OpenFoodFacts database and https://github.com/liip/barcode.js
+*	Uses : OpenFoodFacts database and https://github.com/liip/barcode.js
 */
 
 /* File input 	#barcodeFile
 *  State		#queryState
 *  Picture		#picture
 *  Data			#productData
-*
-*
-*
 */ 
 
 document.getElementById('barcodeFile').onchange = processBarcode;
@@ -20,7 +17,7 @@ document.getElementById('barcodeFile').onchange = processBarcode;
 /////////////////////////////////////////////////
 function processBarcode()
 {
-		document.getElementById('queryState').innerHTML = 'Decodage en cours...';
+	document.getElementById('queryState').innerHTML = 'Decodage en cours...';
 	
 	var image = new Image();
 

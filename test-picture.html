@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Barcode</title>
+		<meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<style>
+			body{
+				margin:0;
+			}
+			
+			.panel-principal {
+				height:100vh;
+				width:100%;
+			}
+			
+			.invisible{
+				display:none;
+			}
+			
+			.clickButton{
+				padding: 25px 25px;
+				background-color: red;
+			}
+			
+			.startPage{
+				background-color:blue;
+				height:50px;
+			}
+		</style>
+    </head>
+    <body>
+	
+	  <div #id="picture" class="panel-principal panel panel-default">
+		<div class="panel-heading">Scanner un produit</div>
+		<div id="queryState" class="panel-body">Please select a sharp photo of a barcode above</div>
+		
+		  <div class="col-sm-4">
+			<label class="btn btn-default btn-lg center-block glyphicon glyphicon-barcode" for="barcodeFile"> Scan </label>
+			<form id="form">
+				<input class="invisible" type="file" id="barcodeFile" />
+			</form>
+		  </div>
+		  <div class="col-sm-8">
+		    <canvas id="canvas" class="img-thumbnail" width="2000" height="1500" style="width: 320px; height: 240px;"></canvas>
+		  </div>
+	  </div>
+	  
+				<span id="productData"> </span>
+
+    </body>	
+	
+	<script src="js/product.js"></script>
+	<script src="js/barcode.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+</html>
