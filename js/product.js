@@ -99,5 +99,5 @@ function fillInfos(product)
     document.getElementById('pays').innerHTML = product.country;	
 	$("#data").show();
 	$("#wait").hide();
-
+	window.location.hash = '#data';
 }

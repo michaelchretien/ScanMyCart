@@ -9,7 +9,9 @@ $( document ).ready(function() {
   
   $("#warning").hide();
   $("#error").hide();
-  $("#data").hide();
+  $("#data").show();
   $("#wait").hide();
   $('body').bind('touchmove', function(e){e.preventDefault()})
+  
+    $('[data-toggle="tooltip"]').tooltip();   
 });
