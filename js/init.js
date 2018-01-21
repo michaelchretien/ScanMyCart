@@ -11,6 +11,7 @@ $( document ).ready(function() {
   $("#error").hide();
   $("#data").hide();
   $("#wait").hide();
+  $("#analyse").hide();
   $('#carboneEstimated').hide();
   $('body').bind('touchmove', function(e){e.preventDefault()})
   

@@ -19,6 +19,7 @@ function processBarcode()
 {
 	//document.getElementById('queryState').innerHTML = 'Decodage en cours...';
 	$("#data").hide();
+	$("#analyse").hide();
 	$("#wait").show();
 	
 	var image = new Image();
@@ -110,6 +111,7 @@ function fillProductInfos(product)
     
 	$('#pays').html(product.country);	
 	$("#data").show();
+	$("#analyse").show();
 	$("#wait").hide();
 	window.location.hash = '#data';
 }
