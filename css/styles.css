@@ -13,6 +13,7 @@ body {
     line-height: 1.8;
     color: #818181;
 	margin:0;
+	overflow:hidden;
 }
 h2 {
     font-size: 24px;
