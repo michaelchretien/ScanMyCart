@@ -62,7 +62,7 @@ function getBarcode()
 /////////////////////////////////////////////////
 function getProductInformation(code)
 {
-	console.log("https://world.openfoodfacts.org/api/v0/product/" + code + ".json");
+	//console.log("https://world.openfoodfacts.org/api/v0/product/" + code + ".json");
 	$.getJSON( "https://world.openfoodfacts.org/api/v0/product/" + code + ".json", function( json ) {
 		//console.log(json );
 		
@@ -82,7 +82,7 @@ function getProductInformation(code)
 			};
 			
 			$("#warning").hide();
-			fillInfos(product);
+			fillProductInfos(product);
 			computeScore(product);
 		}
  });
@@ -94,11 +94,30 @@ function getProductInformation(code)
 /////////////////////////////////////////////////
 function fillProductInfos(product)
 {
-    document.getElementById('nom').innerHTML = product.name;
-    document.getElementById('code').innerHTML = product.code;
-    document.getElementById('carbone').innerHTML = product.carbon;
-    document.getElementById('pays').innerHTML = product.country;	
+    $('#nom').html(product.name);
+    $('#code').html(product.code);
+	
+	if(typeof product.carbon == "undefined")
+	{
+		$('#carboneEstimated').show();
+		product.carbon = estimateCarbonFootPrint();
+		
+	}
+	else
+		$('#carboneEstimated').hide();
+	
+    $('#carbone').html(product.carbon);
+    
+	$('#pays').html(product.country);	
 	$("#data").show();
 	$("#wait").hide();
 	window.location.hash = '#data';
+}
+
+/////////////////////////////////////////////////
+/// Fill infos on page
+/////////////////////////////////////////////////
+function estimateCarbonFootPrint(product)
+{
+	return Math.floor((Math.random() * 100) + 1);
 }

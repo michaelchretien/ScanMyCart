@@ -97,15 +97,26 @@
           </tr>
           <tr>
             <td>Empreinte carbone</td>
-            <td id="carbone"></td>
+            <td id="carbone">	</td>
           </tr>
         </tbody>
       </table>
 
     </div>
     <div class="col-sm-6">
-
-    </div>
+	  <div class="panel panel-default">
+	  <div class="panel-heading">Score
+		<a href="#" data-toggle="tooltip" data-placement="top" title="Basé sur la distance parcourue et la quantié de CO2 relaché nous attribuons une note d'un à dix.">?</a>
+	  </div>
+	  <div class="panel-body">
+		<ul class="list-group list-group-flush">
+		  <li id="moyenneCarbone" class="list-group-item"></li>
+		  <li id="distanceParcourue" class="list-group-item"></li>
+		  <li id="eauConsommee" class="list-group-item"></li>
+		</ul>
+	  </div>
+	  </div>
+	</div>
   </div>
 
   <h2>Commentaires</h2>
@@ -233,6 +244,7 @@
     <script src="js/barcode.js"></script>
     <script src="js/product.js"></script>
     <script src="js/init.js"></script>
+	<script src="js/score.js"></script>
 
 </body>
 

@@ -11,6 +11,7 @@ $( document ).ready(function() {
   $("#error").hide();
   $("#data").show();
   $("#wait").hide();
+  $('#carboneEstimated').hide();
   $('body').bind('touchmove', function(e){e.preventDefault()})
   
     $('[data-toggle="tooltip"]').tooltip();   
