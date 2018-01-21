@@ -1,3 +1,3 @@
 app.controller('controller', ['$scope', function($scope) {
-  $scope.message = "Helloword";
+  $scope.message = "Helloword banane";
 }])
