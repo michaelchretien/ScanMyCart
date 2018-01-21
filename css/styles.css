@@ -43,6 +43,7 @@ h4 {
     padding: 100px 25px;
     font-family: Montserrat, sans-serif;
     text-align: justify;
+    max-width: 1000px;
 }
 .container-fluid {
     padding: 60px 50px;
