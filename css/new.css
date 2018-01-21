@@ -11,6 +11,16 @@
 	about{
 		margin-top:0 !important;
 	}
+	
+	#canvas{
+		margin-top: 25px !important;
+	}
+}
+
+#canvas{
+	max-width: 100%; 
+	max-height: 300px; 
+	margin-top: 0px;
 }
 
 
